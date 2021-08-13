@@ -18,13 +18,13 @@ class TestAvaliador(TestCase):
         leilao.lances.append(lance_tha)
             
         avaliador = Avaliador()
-        avaliador.avalia_lance(leilao)
+        maior, menor = avaliador.avalia_lance(leilao)
         
-        maior_lance_esperado = 350
-        menor_lance_esperado = 200
+        maior_lance_esperado = 350.00
+        menor_lance_esperado = 200.00
         
-        self.assertAlmostEqual(maior_lance_esperado, avaliador.maior_lance)
-        self.assertAlmostEqual(menor_lance_esperado, avaliador.menor_lance)
+        self.assertAlmostEqual(maior_lance_esperado, maior)
+        self.assertAlmostEqual(menor_lance_esperado, menor)
         
-    if ( __name__ == '__main__'):
-        unittest.main()
+    
+unittest.main()
