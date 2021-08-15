@@ -28,4 +28,5 @@ class TestAvaliador(TestCase):
         self.assertAlmostEqual(menor_lance_esperado, menor)
         # Afirma que os parametros precisam ser iguais, caso contrário o teste falha
 
-unittest.main(verbosity=2)
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
