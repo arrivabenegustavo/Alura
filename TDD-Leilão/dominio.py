@@ -18,26 +18,34 @@ class Lance:
 
 class Leilao:
     
-    def __init__(self, descricao):
-        self.descricao = descricao
+    def __init__(self, objeto_leiloado):
+        
+        self.objeto_leiloado = objeto_leiloado
         self.__lances = []
-    
-    @property
-    def lances(self):
-        return self.__lances
-    
-class Avaliador:
-    
-    def __init__(self):
         self.maior_lance = sys.float_info.min
         self.menor_lance = sys.float_info.max
     
-    def avalia_lance(self, leilao: Leilao):
+    
+    def propoe(self, lance : Lance):
         
-        for lance in leilao.lances:
-            if lance.valor > self.maior_lance:
-                self.maior_lance = lance.valor
-            if lance.valor < self.menor_lance:
-                self.menor_lance = lance.valor 
+        if lance.valor > self.maior_lance:
+            self.maior_lance = lance.valor
+        if lance.valor < self.menor_lance:
+            self.menor_lance = lance.valor 
+            
+        self.__lances.append(lance)
+        
+    
+    """ 
+    como temos uma property que retorna lances,
+    para usarmos o metodo propoe e não lances diretamente
+    retornamos como copia "[:]"  """
+    
+    @property
+    def lances(self):
+        return self.__lances[:]
+    
+    
+           
                 
-        return self.maior_lance, self.menor_lance
+        
