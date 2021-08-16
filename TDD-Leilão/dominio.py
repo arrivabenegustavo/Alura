@@ -39,7 +39,7 @@ class Leilao:
     """ 
     como temos uma property que retorna lances,
     para usarmos o metodo propoe e não lances diretamente
-    retornamos como copia "[:]"  """
+    retornamos como copia "[:]" sendo ela uma cópia rasa  """
     
     @property
     def lances(self):
