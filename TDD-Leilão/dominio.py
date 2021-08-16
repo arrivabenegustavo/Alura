@@ -25,6 +25,15 @@ class Leilao:
         self.maior_lance = sys.float_info.min
         self.menor_lance = sys.float_info.max
     
+    """ O método propoe fica sendo o responsável por adicionar um lance a lista. 
+    Dessa forma, escondemos, isto é, encapsulamos a implementação da classe. 
+    Mas ainda conseguimos adicionar um lance sem utilizar o método propoe. 
+    Isso acontece porque estamos devolvendo a mesma lista de lances da classe Leilao. 
+    Ou seja, precisamos devolver outra lista.
+    
+    Como temos uma property que retorna lances,
+    para usarmos o metodo propoe e não lances diretamente
+    retornamos como copia "[:]" sendo ela uma cópia rasa """
     
     def propoe(self, lance : Lance):
         
@@ -37,9 +46,7 @@ class Leilao:
         
     
     """ 
-    como temos uma property que retorna lances,
-    para usarmos o metodo propoe e não lances diretamente
-    retornamos como copia "[:]" sendo ela uma cópia rasa  """
+     """
     
     @property
     def lances(self):
