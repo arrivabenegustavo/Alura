@@ -31,7 +31,7 @@ Para te ajudar a “aprender a aprender”, nós separamos alguns dos pontos ess
 que ele já nos ensinou sobre o tema! Vem conhecer cada um deles lendo esse artigo!
 '''
 
-def avalia_frequancia_letras(texto):
+def avalia_frequencia_letras(texto):
     aparicoes = Counter(texto.lower())
     total_caractere = sum(aparicoes.values())
     proporcoes = [(letra, quantidade / total_caractere * 100) for letra, quantidade in aparicoes.items()]
@@ -40,7 +40,7 @@ def avalia_frequancia_letras(texto):
     for caractere, frequencia in mais_comuns:
         print(f'{caractere} => {frequencia:.2f}%')
     
-avalia_frequancia_letras(texto1)
+avalia_frequencia_letras(texto1)
 
 
     
