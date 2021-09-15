@@ -2,7 +2,7 @@ import unittest
 from dominio import Usuarios, Lance, Leilao
 
 
-class TestAvaliador(unittest.TestCase):
+class TestLeilao(unittest.TestCase):
 
     """ Através do método setUp, conseguimos criar os objetos utilizados pelos testes. 
     Esse método é executado antes de cada teste, dessa forma, garantimos que um teste 
