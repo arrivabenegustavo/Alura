@@ -1,0 +1,34 @@
+
+header {
+    background: #bbbbbb; /* Cor do fundo do cabeçalho*/
+    padding: 20px 0;
+}
+
+.caixa {
+    position: relative; /* Coloca a 'nav dentro da caixa'*/
+    width: 940px;
+    margin: 0 auto;/* Ou seja, para cima e para baixo '0' e as laterais automáticas
+    fazendo com que as margens se calculem automaticamente*/
+}
+
+
+nav {
+    position: absolute; /*Significa que a posição do elemento está destacada, está solta
+    podendo posicionar em qualquer lugar da página*/
+    top: 110px; /* para centralizar. Devido a imagem ter 240px de altura*/
+    right: 0;
+}
+
+nav li {
+    display: inline; /* Coloca todos ITENS da lista na MESMA LINHA*/
+    margin: 0 0 0 15px; /* cima, baixo, direita e esquerda
+    neste caso cria uma margem apenas a esquerda entre os itens da lista*/
+}
+
+nav a {
+    text-transform: uppercase; /* Coloca o texto em letras MAIÚSCULAS*/
+    color: black; /* Cor da fonte*/
+    font-weight: bold; /*Peso da fonte - NEGRITO*/
+    font-size: 22px;
+    text-decoration: none; /* Neste caso OCULTA o SUBLINHADO do texto*/
+}
