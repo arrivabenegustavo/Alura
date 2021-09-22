@@ -42,7 +42,8 @@ em strong {
 }
 
 ul {
-    display: inline-block;
+    display: inline-block; /* Faz com que o texto ocupe espaço apenas no seu lugar
+    e não da linha inteira*/
     vertical-align: top;
     width: 20%;
     margin-right: 15%;
