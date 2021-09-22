@@ -4,13 +4,15 @@ header {
     padding: 20px 0;
 }
 
-.caixa {
-    position: relative; /* Coloca a 'nav dentro da caixa'*/
-    width: 940px;
-    margin: 0 auto;/* Ou seja, para cima e para baixo '0' e as laterais automáticas
-    fazendo com que as margens se calculem automaticamente*/
-}
 
+#caixa {
+    position: relative; /* Coloca a 'nav dentro da caixa'*/
+    width: 940px; /*Espaço da pagina ocupado*/
+    margin: 0 auto;/* para cima e para baixo '0' e as laterais automáticas
+    fazendo com que as margens se calculem automaticamente, ou seja
+    delegamos para o navegador calcular a largura que resta, dividir por dois,
+    e adicionar metade em um dos lados*/
+}
 
 nav {
     position: absolute; /*Significa que a posição do elemento está destacada, está solta
@@ -32,3 +34,55 @@ nav a {
     font-size: 22px;
     text-decoration: none; /* Neste caso OCULTA o SUBLINHADO do texto*/
 }
+
+nav a:hover { /* isto é, quando o mouse estiver por cima do menu (links)*/
+    color: #c78c19;
+    text-decoration: underline; /*Sublinha*/
+}
+
+.produtos { /* Para ter o mesmo formato que a CAIXA*/
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0; /*Espaçamento interno do bloco, fazendo com que se distancie um pouco do cabeçalho*/
+}
+
+
+.produtos li { /* cada item da lista*/
+    display: inline-block; /* faz com que seja usado apenas o próprio espaço
+    liberando o restante do bloco, para termos um item do lado do outro*/
+    width: 30%; /* isto é, cada item ocupará 30% da página */
+    text-align: center; /* Texto alinho ao centro do item*/
+    vertical-align: top; /* texto alinhado através do seu topo*/
+    margin: 0 1.5%; /* Somando total de 3% por item, somados aos 30% de de cada item
+    ocupa 99% da página...deixando os itens centralizados na página */
+    padding: 30px 20px;
+    box-sizing: border-box; /*Com isso. o espaçamento do padding, fica dentro dos 30% de cada item
+    ou seja, o padding tem efeito para dentro desses 30%(Width)*/
+    border: 2px solid black; /*Configuração da borda do item. TAMANHO, TIPO E COR*/
+    border-radius: 20px; /*Arredonda as pontas da borda*/
+   
+}
+
+.produtos h2 {
+    font-size: 30px; /*Tamanho da fonte*/
+    font-weight: bold; /*Negrito*/
+}
+
+
+.produtos li:hover { /* isto é, quando o mouse estiver por cima do item*/
+    border-color: #c78c19;
+}
+
+.produtos li:hover h2 { /* Isto é, Quando passar o mouse pelo item, o texto em 'h2' aumenta a fonte*/
+    font-size: 35px;
+} 
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px; /*Distancia da descrição, ou seja, cria um espaço somente no topo*/
+} 
