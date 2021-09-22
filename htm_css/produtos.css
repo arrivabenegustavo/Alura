@@ -86,3 +86,15 @@ nav a:hover { /* isto é, quando o mouse estiver por cima do menu (links)*/
     font-weight: bold;
     margin-top: 10px; /*Distancia da descrição, ou seja, cria um espaço somente no topo*/
 } 
+
+footer{
+    text-align: center;
+    background: url("bg.jpg"); /*coloca imagem no fundo. 
+    OBS: A PODE SER PEQUENA, POIS O CSS REPLICA ATÉ PREENCHER A LARGURA*/
+    padding: 40px; /*espaçamento interno do rodapé*/
+}
+
+#copyright {
+    color: #ffffff;
+    
+}
