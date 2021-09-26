@@ -108,16 +108,23 @@ form {
     margin: 40px 0; /* Ouseja, margem entre o formulário e o cabeçalho e formulário e rodapé*/ 
 }
 
+/*Desta forma tbm conseguimos estilizar duas tags diferentes ao mesmo tempo*/
 form label, form p {
     display: block;/*Faz com que o próximo conteúdo va para linha debaixo*/
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-/*Desta forma tbm conseguimos estilizar duas tags diferentes ao mesmo tempo*/
-form input, form textarea{ 
+/*Está classe foi criada para executar esse estilo apenas nos inputs comuns
+pois, está configuração desconfigura os inputs do tipo RADIO E CHECKBOX(linhas 49,50,51 e 61
+eles precisam ter o DISPLAY INLINE, de forma que não ocupe o espaço da linha inteira*/
+.input-padrao { 
      display: block;
      margin-bottom: 20px;
      padding: 15px 0;
      width: 50%;
+}
+
+#checkbox{
+    margin: 20px 0;
 }

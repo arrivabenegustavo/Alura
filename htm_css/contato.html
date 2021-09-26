@@ -29,36 +29,36 @@
         <main class="formulario">
             <form action="">
                 <label for="nomesobrenome">Nome e Sobrenome</label> 
-                <input type="text" name="" id="nomesobrenome">
+                <input type="text" id="nomesobrenome" class="input-padrao">
 
                 <label for="email">Email</label>
-                <input type="text" name="" id="email">
+                <input type="text" name="" id="email" class="input-padrao">
 
                 <label for="telefone">Telefone</label>
-                <input type="text" name="" id="telefone">
+                <input type="text" name="" id="telefone" class="input-padrao">
 
                 <label for="mensagem">Mensagem</label>
-                <textarea name="" id="mensagem" cols="30" rows="10"></textarea>
+                <textarea cols="30" rows="10" id="mensagem" class="input-padrao"></textarea>
 
                 <div>
                     <p>Como prefere o nosso contato?</p>
-                    <label for="radio-email">Email</label>
-                    <input type="radio" name="contato" id="radio-email" >
 
-                    <label for="radio-telefone">Ligação</label>
-                    <input type="radio" name="contato" id="radio-telefone">
-
-                    <label for="radio-whatsapp">WhatsApp</label>
-                    <input type="radio" name="contato" id="radio-whatsapp">
+                    <!-- exemplo unificado entre LABEL e INPUT, 
+                    para que não seja necessário o uso de FOR e ID 
+                    Neste caso o INPUT APARECERÁ ANTES do LABEL-->
+                    <label><input type="radio" name="contato">Email</label>
+                    <label><input type="radio" name="contato">Ligação</label>
+                    <label><input type="radio" name="contato">WhatsApp</label>
+                    
                     <!-- Neste caso, o uso do NAME="" faz com que os inputs sejam do mesmo grupo
                     e receba apenas uma entrada, ou seja, somente um item poderá ser escolhido
                     quando um item selecionado, ao clicar em outro, automaticamente o item anterior
                     é desmarcado -->
                 </div>
-
                 <!-- exemplo unificado entre LABEL e  INPUT, 
-                    para que não seja necessário o uso de FOR e ID -->
-                <label>Gostaria de receber nossas novidades por email?<input type="checkbox"></label>
+                    para que não seja necessário o uso de FOR e ID 
+                    NESTE CASO APARECERÁ APÓS O INPUT-->
+                <label id="checkbox"><input type="checkbox">Gostaria de receber nossas novidades por email?</label>
 
                 <input type="submit" value="Enviar formulário">
             </form>
