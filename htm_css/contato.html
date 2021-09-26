@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contato</title>
+
+        <link rel="stylesheet" href="reset.css">
+    
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <header id="pagina2">
+            <div id="caixa">
+                <h1>
+                    <img src="logo.png" alt="Logo Barbearia Alura">
+                </h1> 
+                <nav>
+                    <ul>
+                        <li><a href="barbearia.html">Home</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav> 
+            </div>    
+        </header>
+        <main class="formulario">
+            <form action="">
+                <label for="nomesobrenome">Nome e Sobrenome</label> 
+                <input type="text" name="" id="nomesobrenome">
+
+                <label for="email">Email</label>
+                <input type="text" name="" id="email">
+
+                <label for="telefone">Telefone</label>
+                <input type="text" name="" id="telefone">
+
+                <label for="mensagem">Mensagem</label>
+                <textarea name="" id="mensagem" cols="30" rows="10"></textarea>
+
+                <div>
+                    <p>Como prefere o nosso contato?</p>
+                    <label for="radio-email">Email</label>
+                    <input type="radio" name="contato" id="radio-email" >
+
+                    <label for="radio-telefone">Ligação</label>
+                    <input type="radio" name="contato" id="radio-telefone">
+
+                    <label for="radio-whatsapp">WhatsApp</label>
+                    <input type="radio" name="contato" id="radio-whatsapp">
+                    <!-- Neste caso, o uso do NAME="" faz com que os inputs sejam do mesmo grupo
+                    e receba apenas uma entrada, ou seja, somente um item poderá ser escolhido
+                    quando um item selecionado, ao clicar em outro, automaticamente o item anterior
+                    é desmarcado -->
+                </div>
+
+                <!-- exemplo unificado entre LABEL e  INPUT, 
+                    para que não seja necessário o uso de FOR e ID -->
+                <label>Gostaria de receber nossas novidades por email?<input type="checkbox"></label>
+
+                <input type="submit" value="Enviar formulário">
+            </form>
+        </main>
+        <footer>
+            <img src="logo-branco.png" alt="Logo para rodapé">
+            <p class="copyright">&copy; Copyrigth Barbearia Alura - 2021</p>
+        </footer> 
+    </body>
+</html>
