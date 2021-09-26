@@ -130,5 +130,21 @@ eles precisam ter o DISPLAY INLINE, de forma que não ocupe o espaço da linha i
 }
 
 #enviar {
-    margin-top: 20px;
+    width: 20%; /* Largura da página*/
+    margin-top: 20px; /*Espaçamento superior*/
+    padding: 15px 0; /*Espaçamento interno*/
+    background: orange; /*Cor do fundo*/
+    color: white; /*Cor da fonte*/
+    font-size: 18px; /*Tamanho da fonte*/
+    font-weight: bold; /*Negrito*/
+    border: none; /* Sem borda marcada*/
+    border-radius: 5px; /* Bordas arredondadas da caixa*/
+    transition: 1s background; /*Neste caso, trata-se da TRANSIÇÃO de um evento com mouse
+    fazendo com que ao passar o mouse por cima, altere a cor de fundo com um tempo de 1 segundo*/
+}
+
+#enviar:hover { /* Quando o mouse estiver em cima*/
+    background: darkorange;
+    transform: scale(1.2);/* (Escala)Essa propriedade faz com que seja aumentado em 20% proporcionalmente
+    como se fosse um zoom*/
 }
