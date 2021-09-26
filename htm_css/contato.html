@@ -15,7 +15,7 @@
         <header id="pagina2">
             <div id="caixa">
                 <h1>
-                    <img src="logo.png" alt="Logo Barbearia Alura">
+                    <img src="logo.png" alt="Logo da Barbearia Alura">
                 </h1> 
                 <nav>
                     <ul>
@@ -29,42 +29,58 @@
         <main class="formulario">
             <form action="">
                 <label for="nomesobrenome">Nome e Sobrenome</label> 
-                <input type="text" id="nomesobrenome" class="input-padrao">
-
+                <input type="text" id="nomesobrenome" class="input-padrao" required placeholder="João Abreu">
+                <!-- REQUIRED com que o o campo tenha o preenchimento do campo como obrigatório-->
+                <!-- PLACEHOLDER deixa uma sugestão de preenchimento no campo.
+                uma dica de formato para o preenchimento-->
                 <label for="email">Email</label>
-                <input type="text" name="" id="email" class="input-padrao">
+                <input type="email" id="email" class="input-padrao" placeholder="seuemail@dominio.com">
 
                 <label for="telefone">Telefone</label>
-                <input type="text" name="" id="telefone" class="input-padrao">
+                <input type="tel" id="telefone" class="input-padrao" placeholder="(XX) XXXXX-XXXX">
 
                 <label for="mensagem">Mensagem</label>
                 <textarea cols="30" rows="10" id="mensagem" class="input-padrao"></textarea>
 
-                <div>
-                    <p>Como prefere o nosso contato?</p>
+                <fieldset> <!-- É um bloco que substitui uma DIV por conta da SEMÂNTICA
+                    pois a FIELDSET serve para agrupar blocos com o mesmo assunto.
+                    e neste caso, a tag que representa o título desse bloco é LEGEND-->
+                    <legend>Como prefere o nosso contato?</legend>
 
                     <!-- exemplo unificado entre LABEL e INPUT, 
                     para que não seja necessário o uso de FOR e ID 
                     Neste caso o INPUT APARECERÁ ANTES do LABEL-->
                     <label><input type="radio" name="contato">Email</label>
                     <label><input type="radio" name="contato">Ligação</label>
-                    <label><input type="radio" name="contato">WhatsApp</label>
+                    <label><input type="radio" name="contato" checked>WhatsApp</label>
+                    <!-- CHECKED deixa uma opção previamente selecionada-->
                     
                     <!-- Neste caso, o uso do NAME="" faz com que os inputs sejam do mesmo grupo
                     e receba apenas uma entrada, ou seja, somente um item poderá ser escolhido
                     quando um item selecionado, ao clicar em outro, automaticamente o item anterior
                     é desmarcado -->
-                </div>
+                </fieldset>
                 <!-- exemplo unificado entre LABEL e  INPUT, 
                     para que não seja necessário o uso de FOR e ID 
                     NESTE CASO APARECERÁ APÓS O INPUT-->
                 <label id="checkbox"><input type="checkbox">Gostaria de receber nossas novidades por email?</label>
+                
+                <p></p>
+                <fieldset> 
+                    <legend>Qual horário prefere ser atendido?</legend>
+                    <select>
+                        <option>Manhã</option>
+                        <option>Tarde</option>
+                        <option>Noite</option>
+                    </select>
+                </fieldset>
 
-                <input type="submit" value="Enviar formulário">
+                <input id="enviar" type="submit" value="Enviar formulário">
+
             </form>
         </main>
         <footer>
-            <img src="logo-branco.png" alt="Logo para rodapé">
+            <img src="logo-branco.png" alt="Logo da Barbearia Alura">
             <p class="copyright">&copy; Copyrigth Barbearia Alura - 2021</p>
         </footer> 
     </body>

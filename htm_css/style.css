@@ -109,7 +109,7 @@ form {
 }
 
 /*Desta forma tbm conseguimos estilizar duas tags diferentes ao mesmo tempo*/
-form label, form p {
+form label, form legend {
     display: block;/*Faz com que o próximo conteúdo va para linha debaixo*/
     font-size: 20px;
     margin-bottom: 10px;
@@ -121,10 +121,14 @@ eles precisam ter o DISPLAY INLINE, de forma que não ocupe o espaço da linha i
 .input-padrao { 
      display: block;
      margin-bottom: 20px;
-     padding: 15px 0;
+     padding: 15px 10px;
      width: 50%;
 }
 
 #checkbox{
     margin: 20px 0;
+}
+
+#enviar {
+    margin-top: 20px;
 }
