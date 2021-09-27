@@ -22,11 +22,25 @@ const podeComprar = idade >= 18 || estaAcompanhada == true;
 const destino = "Fortaleza";
 let contador = 0;
 let destinoExiste = false;
-while(contador < 3){
-    if(listaDestinos[contador] == destino){
-        destinoExiste = true;
-        break; // se encontrar o valor na lista, sai do laço
+
+// LAÇO WHILE
+// while(contador < 3){
+//     if(listaDestinos[contador] == destino){
+//         destinoExiste = true;
+//         break; // se encontrar o valor na lista, sai do laço
+//     }
+//     contador += 1;
+// }
+
+//LAÇO FOR
+//   inicio     fim    soma 1 
+for(let i = 0; i < 3 ; i++){
+    if(listaDestinos[i] == destino){
+        destinoExiste = true
+        break
     }
-    contador += 1;
 }
+
+
+
 console.log(`Destino existe: ${destinoExiste}`);
