@@ -101,7 +101,7 @@ footer{
 
 .formulario{
     width: 940px;
-    margin: 0 auto;
+    margin: 0 auto; /* (cima e baixo) (Esquerda e direita)*/
 }
 
 form {
@@ -120,13 +120,13 @@ pois, está configuração desconfigura os inputs do tipo RADIO E CHECKBOX(linha
 eles precisam ter o DISPLAY INLINE, de forma que não ocupe o espaço da linha inteira*/
 .input-padrao { 
      display: block;
-     margin-bottom: 20px;
-     padding: 15px 10px;
+     margin-bottom: 20px; 
+     padding: 15px 10px; /* (cima e baixo) (Esquerda e direita)*/
      width: 50%;
 }
 
 #checkbox{
-    margin: 20px 0;
+    margin: 20px 0; /* (cima e baixo) (Esquerda e direita)*/
 }
 
 #enviar {
@@ -147,4 +147,22 @@ eles precisam ter o DISPLAY INLINE, de forma que não ocupe o espaço da linha i
     background: darkorange;
     transform: scale(1.2);/* (Escala)Essa propriedade faz com que seja aumentado em 20% proporcionalmente
     como se fosse um zoom*/
+}
+
+table{
+    margin: 40px 0; /* (cima e baixo) (Esquerda e direita)*/
+}
+
+thead{
+    background: #555;
+    color: white;
+    font-weight: bold;
+    font: 20px;
+
+}
+
+td, th{ /* Células*/
+    border: 1px solid black;
+    padding: 8px 15px; /* (cima e baixo) (Esquerda e direita)*/
+
 }

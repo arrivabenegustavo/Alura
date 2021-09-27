@@ -60,11 +60,6 @@
                     quando um item selecionado, ao clicar em outro, automaticamente o item anterior
                     é desmarcado -->
                 </fieldset>
-                <!-- exemplo unificado entre LABEL e  INPUT, 
-                    para que não seja necessário o uso de FOR e ID 
-                    NESTE CASO APARECERÁ APÓS O INPUT-->
-                <label id="checkbox"><input type="checkbox">Gostaria de receber nossas novidades por email?</label>
-                
                 <fieldset> 
                     <legend>Qual horário prefere ser atendido?</legend>
                     <select>
@@ -73,10 +68,37 @@
                         <option>Noite</option>
                     </select>
                 </fieldset>
+                <!-- exemplo unificado entre LABEL e  INPUT, 
+                    para que não seja necessário o uso de FOR e ID 
+                    NESTE CASO APARECERÁ APÓS O INPUT-->
+                <label id="checkbox"><input type="checkbox">Gostaria de receber nossas novidades por email?</label>
 
                 <input id="enviar" type="submit" value="Enviar">
 
             </form>
+            <table>
+                <thead> <!-- Representa o cabeçalho de uma tabela-->
+                    <tr><!-- Linha da tabela-->
+                        <th colspan="2">Horários</th> <!-- Título do cabeçalho
+                            E uso do COLSPAN="qntd de células agrupadas" para agrupar células-->
+                        
+                    </tr>
+                </thead>
+                <tbody> <!-- Conteúdo nas células(linhas) da tabela-->
+                    <tr>
+                        <td>Segunda a Quinta</td>
+                        <td>08h ~ 19h</td>
+                    </tr>
+                    <tr>
+                        <td>Sexta</td>
+                        <td>8h ~ 20h</td>
+                    </tr>
+                    <tr>
+                        <td>Sábado</td>
+                        <td>8h ~ 18h</td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
         <footer>
             <img src="logo-branco.png" alt="Logo da Barbearia Alura">
