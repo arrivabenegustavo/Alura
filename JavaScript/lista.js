@@ -25,7 +25,7 @@ let destinoExiste = false;
 while(contador < 3){
     if(listaDestinos[contador] == destino){
         destinoExiste = true;
-        break;
+        break; // se encontrar o valor na lista, sai do laço
     }
     contador += 1;
 }
