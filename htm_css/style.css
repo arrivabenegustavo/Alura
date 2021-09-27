@@ -5,7 +5,7 @@ header {
 }
 
 
-#caixa {
+.caixa {
     position: relative; /* Coloca a 'nav dentro da caixa'*/
     width: 940px; /*Espaço da pagina ocupado*/
     margin: 0 auto;/* para cima e para baixo '0' e as laterais automáticas
@@ -164,5 +164,42 @@ thead{
 td, th{ /* Células*/
     border: 1px solid black;
     padding: 8px 15px; /* (cima e baixo) (Esquerda e direita)*/
-
 }
+
+.banner{
+    width: 100%;
+}
+
+section{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.titulo-principal{
+    text-align: center; 
+    font-size: 2em; /* 'EM' significa a proporção referente a fonte base ou seja
+    terá X vezes o tamanho em px que a fonte base tem */
+    margin: 0 0 1em; /* Isto é, a margem para BAIXO terá o mesmo tamanho da fonte( que no caso
+    é 2x a fonte principal...ou seja, 2em*/
+    clear: left;
+}
+ .principal p {
+    margin: 0 0 1em; /*Neste caso, espaçamento tem o mesmo tamanho da fonte do parágrafo*/
+ }
+
+ .principal strong{
+    font-weight: bold;
+ }
+
+ .principal em{
+     font-style: italic;
+ }
+
+ .utensilios {
+     width: 120px;
+     float: left;
+     margin: 0 20px 20px 0;
+ }
+ .imagembeneficios{
+     width: 60%;
+ }

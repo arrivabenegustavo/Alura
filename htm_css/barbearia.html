@@ -10,7 +10,7 @@
     
     <body><!--#Conteúdo a ser mostrado na página-->
         <header> <!--#Cabeçalho-->
-            <div id="caixa">
+            <div class="caixa">
                 <h1>
                     <img src="logo.png" alt="Logo da Barbearia Alura">
                 </h1> 
@@ -24,19 +24,21 @@
             </div> 
         </header>
 
-        <img id="banner" src="banner.jpg"> <!-- não faz parte do conteúdo principal-->
+        <img class="banner" src="banner.jpg"> <!-- não faz parte do conteúdo principal-->
 
         <main>
         <!--#<div> serve apenas para dividir o conteúdo em blocos-->
-            <section><!-- Substitui uma DIV, pois a SECTION é por semântica
+            <section class="principal"><!-- Substitui uma DIV, pois a SECTION é por semântica
                 quando o conteúdo tem um só objeto, como se fosse uma sessão  -->
-                <h2 class="titulo-centralizado">Sobre a Barbearia Alura</h1>    
+                <h2 class="titulo-principal">Sobre a Barbearia Alura</h1> 
+                    
+                <img class="utensilios"src="utensilios.jpg" alt="Utensílios">
 
                 <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para 
                 o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque 
                 na cidade e conquista novos clientes a cada dia.</p>
 
-                <p id="missao"><em>Nossa missão é: <strong> "Proporcionar auto-estima 
+                <p><em>Nossa missão é: <strong> "Proporcionar auto-estima 
                 e qualidade de vida aos clientes"</strong></em>.</p>
 
                 <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. 
@@ -44,8 +46,8 @@
                 nossos cliente</p>
             </section>
 
-            <section>
-                <h3 class="titulo-centralizado">Benefícios</h2>
+            <section class="beneficios">
+                <h3 class="titulo-principal">Benefícios</h2>
 
                 <ul><!--#uma lista em que a ordem não importa-->
                     <li class="itens">Atendimento aos clientes</li><!--#forma uma lista separando os itens por linha
