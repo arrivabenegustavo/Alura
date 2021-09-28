@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="frase"><button class="botao">Copiar</button><span class="copia"></span>
+    <script>
+        var inputFrase = document.querySelector(".frase");
+        var botao = document.querySelector(".botao");
+        var copia = document.querySelector(".copia");
+
+        function botaoHandler(){
+            copia.textContent = inputFrase.value; // span recebe o valor da frase
+            inputFrase.value = ""
+        }
+        botao.addEventListener('click', botaoHandler); // Quando clicado chama a função
+    </script>
+</body>
+</html>
+
+<!-- código anterior exibe um campo para digitar uma frase 
+    e um botão ao lado. Sua intenção é copiar a frase digitada 
+    para a tag span, que vem logo após o botão. Além disso, assim 
+    que a cópia é feita, o conteúdo é apagado do input com a classe frase -->

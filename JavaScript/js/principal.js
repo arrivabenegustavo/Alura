@@ -1,6 +1,5 @@
 var titulo = document.querySelector(".titulo");
-
-titulo.textContent = "9fit Nutrição";
+titulo.textContent = "9fit Nutrição"; //Altera o nome
 
 
 // Estrutura de repetição para poder acessar a lista de pacientes através da classe
@@ -41,14 +40,18 @@ for(var i = 0; pacientes.length; i++){
     }
     if(altura <= 0 || altura >= 3){
         alturaValida = false;
-        tdaltura.textContent = "Altura inválida"
-        paciente.classList.add("paciente-invalido") //Busca a classe no CSS - altera a cor da fonte
+        tdaltura.textContent = "Altura inválida";
+        paciente.classList.add("paciente-invalido"); //Busca a classe no CSS - altera a cor da fonte
     }
 
     if(alturaValida && pesoValido){
         var imc =  peso / (altura * altura);
-        tdimc.textContent = imc.toFixed(2)// duas casa decimais
+        tdimc.textContent = imc.toFixed(2);// duas casa decimais
     }else{
-        tdimc.textContent = "Erro ao calcular"
+        tdimc.textContent = "Erro ao calcular";
     }
 }
+//  Evento com mouse
+// Necessário buscar o botão no html através do "document", para depois acrescentar a função 
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+
