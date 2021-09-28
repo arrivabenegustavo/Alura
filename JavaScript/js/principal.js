@@ -42,7 +42,7 @@ for(var i = 0; pacientes.length; i++){
     if(altura <= 0 || altura >= 3){
         alturaValida = false;
         tdaltura.textContent = "Altura inválida"
-        paciente.classList.add("paciente-invalido") //Busca a classe no CSS
+        paciente.classList.add("paciente-invalido") //Busca a classe no CSS - altera a cor da fonte
     }
 
     if(alturaValida && pesoValido){
