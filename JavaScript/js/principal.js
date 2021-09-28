@@ -34,11 +34,15 @@ for(var i = 0; pacientes.length; i++){
 
     if(peso <= 0 || peso >= 1000){
         pesoValido = false;
-        tdpeso.textContent = "Peso inválido"
+        tdpeso.textContent = "Peso inválido";
+        //paciente.style.color = "red"; não é uma boa pratica manipular o estilo direto na linha
+        // E sim o que foi feito abaixo, buscando a classe no CSS
+        paciente.classList.add("paciente-invalido") 
     }
     if(altura <= 0 || altura >= 3){
         alturaValida = false;
         tdaltura.textContent = "Altura inválida"
+        paciente.classList.add("paciente-invalido") //Busca a classe no CSS
     }
 
     if(alturaValida && pesoValido){
