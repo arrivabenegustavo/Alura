@@ -31,6 +31,7 @@ if(altura <= 0 || altura >= 3){
 
 if(alturaValida && pesoValido){
     var imc =  peso / (altura * altura);
+    tdimc.textContent = imc
 }else{
     tdimc.textContent = "Erro ao calcular"
 }
