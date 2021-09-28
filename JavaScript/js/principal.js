@@ -54,4 +54,8 @@ for(var i = 0; pacientes.length; i++){
 //  Evento com mouse
 // Necessário buscar o botão no html através do "document", para depois acrescentar a função 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener('click', function(event){
+    event.preventDefault();
+
+})
 

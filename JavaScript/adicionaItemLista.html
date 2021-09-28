@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adicionando itens na lista</title>
+    </head>
+    <body>
+        <ul class="afazeres">
+            <li>Ir ao médico</li>
+            <li>Trocar a senha do Wifi</li>
+            <li>Estudar Javascript</li>
+        </ul>
+        <form class="adicionar-tarefa">
+            <input type="text" name="tarefa">
+            <button id="botao-adicionar">Salvar</button>
+        </form>
+
+        <script>
+            
+            var botao = document.querySelector('#botao-adicionar');
+            botao.addEventListener("click", function(event){
+                event.preventDefault();
+                
+                var form = document.querySelector('.adicionar-tarefa'); // busca o formulário no HTML
+                var tarefa = form.tarefa.value; // Extraí o valor digitado pelo usuário 
+                               //(tarefa é o identificador name='tarefa' do input (linha 16))
+                var criaLi = document.createElement("li"); // Cria item
+                criaLi.textContent = tarefa // Coloca o CONTEÚDO de tarefa no item criado
+                var lista = document.querySelector('.afazeres'); //Busca a lista a ser inserida
+                lista.appendChild(criaLi); //Adiciona item na lista
+            
+
+            });
+        </script>
+    </body>
+</html>
+
+<!--  O comportamento padrão de um form, quando clicamos em um button 
+    ou em um input submit, que está dentro dele, é enviar os dados e 
+    recarregar a página. Por isso, a página de Jéssica sempre recarrega 
+    quando o usuário clica no botão.
+Para evitarmos este comportamento, devemos chamar a função do Javascript 
+que previne o comportamento padrão de certos elementos: event.preventDefault.
+Adicionaremos event.preventDefault dentro da função anônima chamada pelo evento 
+click da função 
+Observe que passamos event como parâmetro da função. Com isso, incluímos um parâmetro
+ que está sempre presente nas funções executadas quando ocorre um evento.
+Como nem sempre event é usado, às vezes, é desnecessário passá-lo para a função. 
+Mas neste caso, é ele quem contém a função .preventDefault(), na qual estamos 
+interessados, logo, precisaremos passá-lo como parâmetro.
+Um detalhe interessante é que em certos navegadores, mesmo sem receber o event 
+como parâmetro, a função event.preventDefault() continua funcionando. 
+Isto é uma peculiaridade de certos navegadores modernos, e pode ser que navegadores 
+mais antigos funcionem de forma diferente.
+Se nosso objetivo é escrever um código seguindo as boas práticas do mercado, 
+devemos sempre usar event como parâmetro e as funções que são chamadas pelos eventos.-->
