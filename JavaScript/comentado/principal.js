@@ -36,7 +36,8 @@ for(var i = 0; pacientes.length; i++){
     if(altura <= 0 || altura >= 3){
         alturaValida = false;
         tdAltura.textContent = "Altura inválida";
-        paciente.classList.add("paciente-invalido"); //Busca a classe no CSS - altera a cor da fonte
+        paciente.classList.add("paciente-invalido"); //Busca a classe no CSS - altera a cor da fonte na linha inteira
+        //classList faz a leitura/busca da classe e "add" adiciona ao HTML estilizando o objeto PACIENTE
     }
 
     if(alturaValida && pesoValido){
@@ -50,7 +51,9 @@ for(var i = 0; pacientes.length; i++){
 var botaoAdiciona = document.querySelector("#adicionar-paciente");
 console.log(botaoAdiciona);
 botaoAdiciona.addEventListener("click", function(event){
-    event.preventDefault();
+    event.preventDefault(); // Muda o evento padrão do addEventListener
+    // que neste caso é o fato de sempre que o botão é clicado 
+    // a página recarrega automaticamente dando um clear, ou seja, limpando a tela e apagando o item adicionado
 
 
 
