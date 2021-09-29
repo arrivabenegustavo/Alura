@@ -144,7 +144,7 @@ button[disabled=disabled], button:disabled {
 	color: red;
 }
 
-.fadeOut{
-	opacity: 0;
-	transition: 0.5s;
+.fadeOut{ /* Classe nas linhas*/
+	opacity: 0; /* Tira a cor das fontes da linha*/
+	transition: 0.5s;/* Tempo para tirar a cor*/
 }
