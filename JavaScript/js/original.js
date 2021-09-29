@@ -49,14 +49,19 @@ botaoAdicionar.addEventListener("click", function(event){
     var altura = form.altura.value;
     var gordura = form.gordura.value;
 
+    // Cria linha da tabela
     var pacienteTr = document.createElement("tr");
 
-    var tdNome = document.createElement("td");
+    //Cria "td" célula da tabela
+    var tdNome = document.createElement("td"); 
     var tdPeso = document.createElement("td");
     var tdAltura = document.createElement("td");
     var tdGordura = document.createElement("td");
 
-    tdNome.textContent = nome;
+
+    // Recebe o CONTEÚDO DE TEXTO - Por se tratar de uma variável com tag
+    // é necessário o uso do textContent
+    tdNome.textContent = nome; 
     tdPeso.textContent = peso;
     tdAltura.textContent = altura;
     tdGordura.textContent = gordura;

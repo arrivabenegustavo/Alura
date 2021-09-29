@@ -1,5 +1,5 @@
 var titulo = document.querySelector(".titulo");
-titulo.textContent = "9fit Nutrição"; //Altera o nome
+titulo.textContent = "9fit Nutrição"; //Recebe o nome
 
 
 // Estrutura de repetição para poder acessar a lista de pacientes através da classe
