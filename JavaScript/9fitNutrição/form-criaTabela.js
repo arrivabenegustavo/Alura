@@ -11,12 +11,24 @@ botaoAdicionar.addEventListener("click", function(event){
     
     var pacienteTr = montaTr(paciente);
 
+    var erros = validaPaciente(paciente);
+
+    //Se a lista estiver fazia, não houve erro, caso contrário mostrará a mensagem de erro
+    if(erros.length > 0){
+        var erro = document.querySelector(".mensagem-erro");
+        erro.textContent = erros
+        return;
+    }
+    
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr);
+    form.reset(); // Limpa o formulário após paciente inserido, para adicionar outro  
 
-    console.log(pacienteTr)
-   
 });
+
+
+// funções
+
 
 // Quando trata-se de característica de uma propriedade, assim podemos transformar em um objeto
 // Neste caso é um paciente(propriedade) com as características de nome, peso e etc
@@ -26,7 +38,6 @@ function extraiDadosDoFormulario(form){
         nome: form.nome.value,
         peso: form.peso.value,
         altura: form.altura.value,
-        gordura: form.gordura.value,
         imc: calculaImc(form.peso.value, form.altura.value)
     }
     return paciente;
@@ -41,16 +52,12 @@ function montaTr(paciente){
     var tdNome = montaTd(paciente.nome, "info-nome");
     var tdPeso = montaTd(paciente.peso, "info-peso");
     var tdAltura = montaTd(paciente.altura, "info-altura");
-    var tdGordura = montaTd(paciente.gordura, "info-gordura");
     var tdImc = montaTd(paciente.imc, "info-imc");
 
     pacienteTr.appendChild(tdNome);
     pacienteTr.appendChild(tdPeso);
     pacienteTr.appendChild(tdAltura);
-    pacienteTr.appendChild(tdGordura);
     pacienteTr.appendChild(tdImc)
-
-    
 
     return pacienteTr;
 }
@@ -60,6 +67,18 @@ function montaTd(dado, classe){
     var td = document.createElement("td");
     td.textContent = dado;
     td.classList.add(classe);
-
     return td;
+}
+
+function validaPaciente(paciente){
+    
+    var erros = []
+
+    if(!validaPeso(paciente.peso)){
+       erros.push("Peso inválido!");
+    }
+    if(!validaAltura(paciente.altura)){
+        erros.push("Altura inválida")
+    }
+    return erros
 }
