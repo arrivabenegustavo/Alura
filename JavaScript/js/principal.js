@@ -15,47 +15,47 @@ for(var i = 0; pacientes.length; i++){
     // basta declarar uma variável para receber a posição em casa iteração
     var paciente = pacientes[i];
                     
-    var tdpeso = paciente.querySelector(".info-peso"); //traz a linha
-    var peso = tdpeso.textContent; // Traz o conteúdo/valor
+    var tdPeso = paciente.querySelector(".info-peso"); //traz a linha
+    var tdAltura = paciente.querySelector(".info-altura"); //traz a linha
+    var tdImc = paciente.querySelector(".info-imc"); // traz a linha
 
-    var tdaltura = paciente.querySelector(".info-altura"); //traz a linha
-    var altura = tdaltura.textContent; // Traz o conteúdo/valor
+    var peso = tdPeso.textContent; // Traz o conteúdo/valor
+    var altura = tdAltura.textContent; // Traz o conteúdo/valor
 
-    var imc =  peso / (altura * altura);
-
-    var tdimc = paciente.querySelector(".info-imc"); // traz a linha
-    tdimc.textContent = imc // Adicionando o imc no HTML, ou seja, o conteúdo recebe um novo valor
-
-
-    // Para validar o calculo do IMC, caso atenda as condições abaixo
+    //Para validar o calculo do IMC, caso atenda as condições abaixo
     var alturaValida = true;
     var pesoValido = true;
 
     if(peso <= 0 || peso >= 1000){
         pesoValido = false;
-        tdpeso.textContent = "Peso inválido";
+        tdPeso.textContent = "Peso inválido";
         //paciente.style.color = "red"; não é uma boa pratica manipular o estilo direto na linha
         // E sim o que foi feito abaixo, buscando a classe no CSS
         paciente.classList.add("paciente-invalido") 
     }
     if(altura <= 0 || altura >= 3){
         alturaValida = false;
-        tdaltura.textContent = "Altura inválida";
+        tdAltura.textContent = "Altura inválida";
         paciente.classList.add("paciente-invalido"); //Busca a classe no CSS - altera a cor da fonte
     }
 
     if(alturaValida && pesoValido){
         var imc =  peso / (altura * altura);
-        tdimc.textContent = imc.toFixed(2);// duas casa decimais
+        tdImc.textContent = imc.toFixed(2);// duas casa decimais
     }else{
-        tdimc.textContent = "Erro ao calcular";
+        tdImc.textContent = "Erro ao calcular";
     }
 }
-//  Evento com mouse
-// Necessário buscar o botão no html através do "document", para depois acrescentar a função 
-var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener('click', function(event){
+
+var botaoAdiciona = document.querySelector("#adicionar-paciente");
+console.log(botaoAdiciona);
+botaoAdiciona.addEventListener("click", function(event){
     event.preventDefault();
 
+
+
+
+
 })
+
 
