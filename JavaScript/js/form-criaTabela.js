@@ -5,31 +5,44 @@ botaoAdicionar.addEventListener("click", function(event){
     // a página recarrega automaticamente dando um clear, ou seja, limpando a tela e apagando o item adicionado
     console.log("Fui clicado!");
 
+    // Busca o formulário através da classe
     var form = document.querySelector("#form-adiciona");
+    var paciente = extraiDadosDoFormulario(form)
+    
+    var pacienteTr = montaTr(paciente);
 
-    var nome = form.nome.value;
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
 
-    // Cria linha da tabela
+    console.log(pacienteTr)
+   
+});
+
+// Quando trata-se de característica de uma propriedade, assim podemos transformar em um objeto
+// Neste caso é um paciente(propriedade) com as características de nome, peso e etc
+function extraiDadosDoFormulario(form){
+
+    var paciente = {
+        nome: form.nome.value,
+        peso: form.peso.value,
+        altura: form.altura.value,
+        gordura: form.gordura.value,
+        imc: calculaImc(form.peso.value, form.altura.value)
+    }
+    return paciente;
+}
+
+function montaTr(paciente){
+
     var pacienteTr = document.createElement("tr");
+    pacienteTr.classList.add("paciente");
 
     //Cria "td" célula da tabela
-    var tdNome = document.createElement("td"); 
-    var tdPeso = document.createElement("td");
-    var tdAltura = document.createElement("td");
-    var tdGordura = document.createElement("td");
-    var tdImc = document.createElement("td");
-
-
-    // Recebe o CONTEÚDO DE TEXTO - Por se tratar de uma variável com tag
-    // é necessário o uso do textContent
-    tdNome.textContent = nome; 
-    tdPeso.textContent = peso;
-    tdAltura.textContent = altura;
-    tdGordura.textContent = gordura;
-    tdImc.textContent = calculaImc(peso, altura) //Função do arquivo form
+    var tdNome = montaTd(paciente.nome, "info-nome");
+    var tdPeso = montaTd(paciente.peso, "info-peso");
+    var tdAltura = montaTd(paciente.altura, "info-altura");
+    var tdGordura = montaTd(paciente.gordura, "info-gordura");
+    var tdImc = montaTd(paciente.imc, "info-imc");
 
     pacienteTr.appendChild(tdNome);
     pacienteTr.appendChild(tdPeso);
@@ -37,9 +50,16 @@ botaoAdicionar.addEventListener("click", function(event){
     pacienteTr.appendChild(tdGordura);
     pacienteTr.appendChild(tdImc)
 
-    var tabela = document.querySelector("#tabela-pacientes");
+    
 
-    tabela.appendChild(pacienteTr);
+    return pacienteTr;
+}
 
+//chamada dentro da função "montaTr"
+function montaTd(dado, classe){
+    var td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
 
-});
+    return td;
+}
