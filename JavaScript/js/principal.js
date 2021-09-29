@@ -9,12 +9,13 @@ titulo.textContent = "9fit Nutrição"; //Recebe o nome
 var pacientes = document.querySelectorAll(".paciente");
 
 // Repetição iniciando com ZERO, até o tamanho da Array(lista), somando 1
-for(var i = 0; pacientes.length; i++){
+for(var i = 0; i < pacientes.length; i++){
 
     // Para facilitar o acesso a cada item sem precisar mencionar a posição em cada momento que aparece "paciente"
     // basta declarar uma variável para receber a posição em casa iteração
     var paciente = pacientes[i];
-                    
+     
+    var tdNome = paciente.querySelector(".info-nome");
     var tdPeso = paciente.querySelector(".info-peso"); //traz a linha
     var tdAltura = paciente.querySelector(".info-altura"); //traz a linha
     var tdImc = paciente.querySelector(".info-imc"); // traz a linha
