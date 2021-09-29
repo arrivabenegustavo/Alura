@@ -20,6 +20,7 @@ botaoAdicionar.addEventListener("click", function(event){
     var tdPeso = document.createElement("td");
     var tdAltura = document.createElement("td");
     var tdGordura = document.createElement("td");
+    var tdImc = document.createElement("td");
 
 
     // Recebe o CONTEÚDO DE TEXTO - Por se tratar de uma variável com tag
@@ -28,12 +29,13 @@ botaoAdicionar.addEventListener("click", function(event){
     tdPeso.textContent = peso;
     tdAltura.textContent = altura;
     tdGordura.textContent = gordura;
-
+    tdImc.textContent = calculaImc(peso, altura) //Função do arquivo form
 
     pacienteTr.appendChild(tdNome);
     pacienteTr.appendChild(tdPeso);
     pacienteTr.appendChild(tdAltura);
     pacienteTr.appendChild(tdGordura);
+    pacienteTr.appendChild(tdImc)
 
     var tabela = document.querySelector("#tabela-pacientes");
 
