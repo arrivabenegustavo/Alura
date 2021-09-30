@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <textarea id="corpo-postagem" cols="40" rows="5"></textarea>
+        <p>Caracteres: <span id="numero-caracteres">0</span> caracteres.</p>
+    </body>
+    <script>
+        var campoPostagem = document.querySelector("#corpo-postagem");
+        campoPostagem.addEventListener("input", atualizaCaracteres);
+         // contador.js
+        function atualizaCaracteres() {
+            var postagem = document.querySelector("#corpo-postagem").value;
+            var caracteres = postagem.length;
+
+            var contador = document.querySelector("#numero-caracteres");
+            contador.innerHTML = caracteres;
+        }
+    </script>
+</body>
+</html>
