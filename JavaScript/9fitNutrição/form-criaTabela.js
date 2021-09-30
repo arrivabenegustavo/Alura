@@ -3,31 +3,32 @@ botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault(); //Muda o evento padrão de "addEventListener"
     // que neste caso é o fato de sempre que o botão é clicado 
     // a página recarrega automaticamente dando um clear, ou seja, limpando a tela e apagando o item adicionado
-    console.log("Fui clicado!");
 
-    // Busca o formulário através da classe
-    var form = document.querySelector("#form-adiciona");
+    var form = document.querySelector("#form-adiciona");  // Busca o formulário através da classe
     var paciente = extraiDadosDoFormulario(form)
-    
-    var pacienteTr = montaTr(paciente);
-
     var erros = validaPaciente(paciente);
-
-    //Se a lista estiver fazia, não houve erro, caso contrário mostrará a mensagem de erro
-    if(erros.length > 0){
+    
+    if(erros.length > 0){ //Se a lista estiver vazia, não houve erro, caso contrário mostrará a mensagem de erro
         var erro = document.querySelector(".mensagem-erro");
         erro.textContent = erros
         return;
     }
+
+    adicionaPacienteNaTabela(paciente)
     
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
     form.reset(); // Limpa o formulário após paciente inserido, para adicionar outro  
 
 });
 
 
 // funções
+
+function adicionaPacienteNaTabela(paciente){
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 
 
 // Quando trata-se de característica de uma propriedade, assim podemos transformar em um objeto
