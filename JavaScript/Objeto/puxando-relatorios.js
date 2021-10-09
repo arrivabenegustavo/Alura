@@ -7,6 +7,7 @@ const cliente = {
     cpf: '12543652266',
     email: 'andre@email.com',
     fones: [ '5591235498', '5521988743124' ],
+    //Chave : valor -> Array com outros objetos
     dependentes: [
       {
         nome: 'Sara Silva',
@@ -22,5 +23,24 @@ const cliente = {
     //neste caso "depositar é a chave e a função o valor "
     depositar:function(valor){
       this.saldo += valor
-    }
+    }// "this" faz referência ao próprio objeto
   }
+
+let relatorio = "";
+
+for(let info in cliente){
+
+  // insto é, se o tipo for object ou function, não faz nda, apenas continua percorrendo
+  if(typeof cliente[info] === "object" || typeof cliente[info] === "function" ){
+
+    continue
+
+  }else{ // Quebra de linha após relatório para melhor visualização do resultado
+    relatorio += ` 
+    ${info} => ${cliente[info]}
+    `
+    //chave +> valor
+  } 
+  
+}
+console.log(relatorio);
