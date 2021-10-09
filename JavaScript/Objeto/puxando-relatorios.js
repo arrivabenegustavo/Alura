@@ -31,6 +31,8 @@ let relatorio = "";
 for(let info in cliente){
 
   // insto é, se o tipo for object ou function, não faz nda, apenas continua percorrendo
+  // isto é necessário por conter Array e funções dentro dos objetos, pois eles não são exibidos corretamente
+  // então usamos essa condição abaixo para pular esses valores
   if(typeof cliente[info] === "object" || typeof cliente[info] === "function" ){
 
     continue
