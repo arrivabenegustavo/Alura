@@ -47,12 +47,27 @@ function iniciaCronometro(){
             if(tempoRestante < 1){
                 campo.attr("disabled", true); // Desabilita o campo
                 clearInterval(cronometroID); // Para a contagem 
+                campo.addClass('campo-desativado'); // coloca cor no campo
             }
         },1000); // Segundo parâmetro da função "setInterval" em mili-segundos, que neste caso representa 1 segundo  
     });
 }
 
+var frase = $('.frase').text();
+campo.on('input',function(){
+    var digitado = campo.val();
+    var compara = frase.substr(0, digitado.length); // Pega o que está sendo digitado na primeira posição até o tamanho, ou seja, enquanto estiver digitando, compara com a frase
+    console.log("Digitado" + digitado);
+    console.log("Compara" + compara);
+    if(digitado == compara){
+        campo.addClass('borda-verde');
+        campo.removeClass('borda-vermelha')
+    }else{
+        campo.addClass('borda-vermelha');
+        campo.removeClass('borda-verde');
+    }
 
+});
 
 function reiniciaJogo(){
     campo.attr("disabled", false); // desabilita o campo para digitação
@@ -61,4 +76,8 @@ function reiniciaJogo(){
     $('#contador-caracteres').text('0');
     $('#tempo-digitacao').text(tempoInicial); // recebe o conteúdo do campo, que neste caso é 5
     iniciaCronometro();
+    campo.removeClass('campo-desativado'); // tira cor do campo
+    campo.removeClass('borda-vermelha');
+    campo.removeClass('borda-verde');
+
 }
