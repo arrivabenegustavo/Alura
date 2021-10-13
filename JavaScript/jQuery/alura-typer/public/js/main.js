@@ -57,8 +57,8 @@ var frase = $('.frase').text();
 campo.on('input',function(){
     var digitado = campo.val();
     var compara = frase.substr(0, digitado.length); // Pega o que está sendo digitado na primeira posição até o tamanho, ou seja, enquanto estiver digitando, compara com a frase
-    console.log("Digitado" + digitado);
-    console.log("Compara" + compara);
+    // Ou var digitouCorreto = frase.startsWith(digitado) disponível a partir do ECMA Script 6
+    // if(digitouCorreto){}
     if(digitado == compara){
         campo.addClass('borda-verde');
         campo.removeClass('borda-vermelha')
