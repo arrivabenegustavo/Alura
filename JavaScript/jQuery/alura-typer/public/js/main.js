@@ -45,9 +45,9 @@ function iniciaCronometro(){
             tempoRestante--;
             $('#tempo-digitacao').text(tempoRestante);
             if(tempoRestante < 1){
-                campo.attr("disabled", true); // Desabilita o campo
                 clearInterval(cronometroID); // Para a contagem 
-                campo.addClass('campo-desativado'); // coloca cor no campo
+                finalizaJogo();
+                
             }
         },1000); // Segundo parâmetro da função "setInterval" em mili-segundos, que neste caso representa 1 segundo  
     });
@@ -66,8 +66,45 @@ campo.on('input',function(){
         campo.addClass('borda-vermelha');
         campo.removeClass('borda-verde');
     }
-
 });
+
+
+function inserePlacar(){
+    var corpoTabela = $('.placar').find('tbody');// Acha a o corpo da tabela através da classe da sessão e buscado por find()
+    var usuario = "";
+    var numPalavras = $('contador-palavras').text();
+    var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>"
+    var linha = novaLinha(usuario);
+
+
+};
+
+function novaLinha(usuario, numPalavras){
+    var linha = $('<tr>');// cria uma uma 
+    var colunaUsuario = $('<td>').text(usuario);
+    var colunaPalavras = $('<td>').text(numPalavras);
+    var colunaRemover = $('<td>');
+
+    var link = $('<a>').addClass('botao-remover').attr('href', '#');
+    var icone =$()
+};
+
+
+$('.botao-remover').on("click", function(event){
+    event.preventDefault(); // previne o evento padrão da tag <a>, 
+    //pois toda vez que clicamos no botão, a pagina é redirecionada para o topo por padrão
+    // com o uso "event.preventDefault" evita o padrão e não altera o comportamento da página
+    $(this).parent().parent().remove(); 
+    // This -> exatamente o elemento clicado
+    // parent -> sobe para o pai, ou seja, a cada parent sobe o nivel
+});
+
+function finalizaJogo(){
+    campo.attr("disabled", true); // Desabilita o campo
+    campo.addClass('campo-desativado'); // coloca cor no campo
+    inserePlacar();
+}
+
 
 function reiniciaJogo(){
     campo.attr("disabled", false); // desabilita o campo para digitação
