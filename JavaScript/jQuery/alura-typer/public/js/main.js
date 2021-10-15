@@ -21,8 +21,6 @@ function atualizaTamanhoFrase(){
 };
 
 
-
-
 function iniciaContadores(){
     campo.on('input', function(){ // isto é, quando for imputado dados no campo executa a função( que neste caso é anónima )
     
@@ -68,46 +66,61 @@ campo.on('input',function(){
     }
 });
 
-
+//insere o placar na linha
 function inserePlacar(){
-    var corpoTabela = $('.placar').find('tbody');// Acha a o corpo da tabela através da classe da sessão e buscado por find()
-    var usuario = "";
-    var numPalavras = $('contador-palavras').text();
-    var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>"
-    var linha = novaLinha(usuario);
+    var corpoTabela = $('.placar').find('tbody');// find() acha a "tbody" dentro da ".placar"
+    var usuario = "Gustavo";
+    var numPalavras = $('#contador-palavras').text();
+
+    var linha = novaLinha(usuario, numPalavras);
+    linha.find('.botao-remover').on('click', removeLinha); //Acha a classe para atrelar um evento 
+
+    corpoTabela.prepend(linha); // Adiciona sempre na primeira linha
 
 
 };
 
+//Cria a linha para tabela placar 
+// Dessa forma os elementos são criado com todas propriedades html
 function novaLinha(usuario, numPalavras){
-    var linha = $('<tr>');// cria uma uma 
+    var linha = $('<tr>');
     var colunaUsuario = $('<td>').text(usuario);
     var colunaPalavras = $('<td>').text(numPalavras);
     var colunaRemover = $('<td>');
 
-    var link = $('<a>').addClass('botao-remover').attr('href', '#');
-    var icone =$()
+    var link = $('<a>').addClass('botao-remover').attr('href','#'); // attr("atributo", "valor") -> adiciona atributo
+    var icone = $('<i>').addClass('small').addClass('material-icons').text('delete');
+
+    link.append(icone); // adiciona o ícone dentro de link (<a> <i></i> </a>)
+    colunaRemover.append(link); // adiciona link dentro da coluna (<td> <a> <i></i> </a> </td>)
+
+    linha.append(colunaUsuario);
+    linha.append(colunaPalavras);
+    linha.append(colunaRemover);
+
+    return linha; 
 };
 
-
-$('.botao-remover').on("click", function(event){
+function removeLinha(){
     event.preventDefault(); // previne o evento padrão da tag <a>, 
     //pois toda vez que clicamos no botão, a pagina é redirecionada para o topo por padrão
     // com o uso "event.preventDefault" evita o padrão e não altera o comportamento da página
     $(this).parent().parent().remove(); 
-    // This -> exatamente o elemento clicado
-    // parent -> sobe para o pai, ou seja, a cada parent sobe o nivel
-});
+    // This -> referência exatamente o elemento clicado
+    // parent -> sobe para o pai, ou seja, a cada parent sobe o nível
+};
+    
+
 
 function finalizaJogo(){
-    campo.attr("disabled", true); // Desabilita o campo
+    campo.attr("disabled", true); // attr('atributo', 'valor') desabilita o campo
     campo.addClass('campo-desativado'); // coloca cor no campo
     inserePlacar();
 }
 
 
 function reiniciaJogo(){
-    campo.attr("disabled", false); // desabilita o campo para digitação
+    campo.attr("disabled", false); //attr('atributo', 'valor') Habilita o campo para digitação
     campo.val(""); // limpa o conteúdo do campo
     $('#contador-palavras').text('0'); 
     $('#contador-caracteres').text('0');
@@ -117,4 +130,4 @@ function reiniciaJogo(){
     campo.removeClass('borda-vermelha');
     campo.removeClass('borda-verde');
 
-}
+};
