@@ -1,0 +1,41 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.card {
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0 rgba(50, 50, 50, 0.22);
+    width: 200px;
+    padding: 20px;
+    transition: all 0.3s ease-out;
+    
+    
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.card .title {
+    
+}
+
+.card .title h1 {
+    display: inline;
+}
+
+.imagem {
+    max-width: 50px;
+    max-height: 50px;
+    float: right;
+       
+}
