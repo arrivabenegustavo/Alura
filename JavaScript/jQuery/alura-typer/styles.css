@@ -16,8 +16,7 @@ body {
     width: 200px;
     padding: 20px;
     transition: all 0.3s ease-out;
-    
-    
+     
 }
 
 .card:hover {
@@ -37,5 +36,6 @@ body {
     max-width: 50px;
     max-height: 50px;
     float: right;
+
        
 }
