@@ -1,3 +1,6 @@
+$('#botao-placar').click(mostraPlacar);
+
+
 //insere o placar na linha
 function inserePlacar(){
     var corpoTabela = $('.placar').find('tbody');// find() acha a "tbody" dentro da ".placar"
@@ -42,3 +45,13 @@ function removeLinha(){
     // This -> referência exatamente o elemento clicado
     // parent -> sobe para o pai, ou seja, a cada parent sobe o nível
 };
+
+function mostraPlacar(){
+    $('.placar').stop().fadeToggle(500); // fade por padrão esconde sumindo aos poucos, utilizado com o toggle tem o efeito reverso a cada click 
+    // ou seja, a cada click mostra ou esconde com efeito suave
+}
+
+// stop -> para parar o efeito, pois por padrão se clicado varias vezes ele ficara sumindo e mostrando conforme quantidades de click
+// usamos o STOP para que quando clicado ele para o que estava fazendo e faz novo efeito e assim por diante
+
+// toggle ->altera o comportamento do CSS a cada click baseando-se no que foi configurado no css

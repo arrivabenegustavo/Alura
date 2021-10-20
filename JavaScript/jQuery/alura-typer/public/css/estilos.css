@@ -25,3 +25,10 @@
     vertical-align: middle; /* alinha o ícone com o texto*/
 }
 
+.placar {
+    display: none; /* Começa o jogo sem placar*?
+}
+
+body {
+    overflow: scroll; /* ja garante o espaço da barra de rolagem sem alterar no layout da pagina*/
+}
