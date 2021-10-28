@@ -1,3 +1,7 @@
+body {
+    font-family: 'Montserrat', sans-serif; /*Toda página recebe essa fonte*/
+}
+
 
 header {
     background: #bbbbbb; /* Cor do fundo do cabeçalho*/
@@ -181,7 +185,7 @@ section{
     terá X vezes o tamanho em px que a fonte base tem */
     margin: 0 0 1em; /* Isto é, a margem para BAIXO terá o mesmo tamanho da fonte( que no caso
     é 2x a fonte principal...ou seja, 2em*/
-    clear: left;
+    clear: left; /* limpa o espaço do float da classe "UTENSILIOS" para não afetar a estrutura do conteúdo abaixo de ontem o float foi usado*/
 }
  .principal p {
     margin: 0 0 1em; /*Neste caso, espaçamento tem o mesmo tamanho da fonte do parágrafo*/
