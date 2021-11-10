@@ -44,3 +44,26 @@ for(let info in cliente){
   
 }
 
+// Usando métodos de Array
+
+function oferecerSeguro(objeto){
+    // Gera uma Array com as chaves do objeto
+    const chaveClientes = Object.keys(objeto); 
+
+    // Gera uma Array com os valores do objeto
+    const valorClientes = Object.values(cliente);
+    console.log(valorClientes);
+
+    //"entries" gera uma Array com várias Arrays de chave e valor
+    const listaChaveValor = Object.entries(cliente);
+    console.log(listaChaveValor);
+
+    // "includes" verifica se o parâmetro está incluído no Array "chaveClientes"
+    if(chaveClientes.includes("dependentes")){
+    console.log(`Mostrará o nome do cliente caso exista algum dependente => ${objeto.nome}`)
+    }
+}
+
+oferecerSeguro(cliente);
+
+

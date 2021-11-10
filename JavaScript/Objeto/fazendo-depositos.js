@@ -2,10 +2,10 @@
 
 const cliente = {
   //Chave: valor
-  nome: 'Andre',
+  nome: 'Gustavo',
   idade: 36,
   cpf: '12543652266',
-  email: 'andre@email.com',
+  email: 'gustavo@email.com',
   fones: [ '5591235498', '5521988743124' ],
   dependentes: [
     {
@@ -18,10 +18,10 @@ const cliente = {
       dataNasc: '04/01/2014'
     }
   ],
-  saldo:100,
+  saldo: 100,
   //neste caso "depositar é a chave e a função o valor "
-  depositar:function(valor){
-    this.saldo += valor
+  depositar: function(valor){
+    this.saldo += valor // "this" para poder usar a propriedade saldo, pois está no mesmo contexto
   }
 }
 

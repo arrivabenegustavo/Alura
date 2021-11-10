@@ -1,0 +1,31 @@
+
+// função construtora - constrói um objeto chave: valor
+function Cliente(nome, cpf, email, saldo){
+    this.nome = nome
+    this.cfp = cpf
+    this.email = email
+    this.saldo = saldo
+    this.depositar = function(valor){
+        this.saldo += valor  
+    }
+};
+
+// constrói um novo cliente
+const c1 = new Cliente('Gustavo', "876876876", "g@a.com", 2000)
+
+
+// Herda propriedades de Cliente
+function ClientePoupança(nome, cpf, saldoPoup){
+    Cliente.call(this, nome, cpf) // chama as propriedades de Cliente
+    this.saldoPoup = saldoPoup // propriedade própria
+}
+
+const cp = new ClientePoupança('Thais','123456789', '200' )
+
+
+// Cria um novo método/propriedade através do prototype
+ClientePoupança.prototype.depositarPoup = function(valor){
+    this.saldoPoup += valor
+}
+
+cp.depositarPoup(100) // adiciona valor ao saldo conforme função criada a cima
