@@ -19,7 +19,7 @@ const tabela = document.querySelector('[data-tabela]')
 const listaClientes = () => {
     return fetch('http://localhost:3000/profile') // Retorna uma promisse (promessa)
     .then(resposta => {
-        return resposta.json() // Por retornar em texto, é necessário a conversão pata objeto JSON
+        return resposta.json() // Por retornar em texto, é necessário a conversão para objeto JSON
     })
 }
 
